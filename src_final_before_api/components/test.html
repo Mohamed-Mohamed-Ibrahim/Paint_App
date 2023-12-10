@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Lines</title>
+    <!-- Include Konva library -->
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        // Function to update lines based on received data
+        function updateLines(lineData) {
+            const stage = new Konva.Stage({
+                container: 'container',
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+
+            const layer = new Konva.Layer();
+
+            lineData.forEach(data => {
+                const line = new Konva.Line({
+                    id: data.id,
+                    points: data.points,
+                    stroke: data.stroke,
+                    strokeWidth: data.strokeWidth,
+                });
+
+                layer.add(line);
+            });
+
+            stage.add(layer);
+        }
+
+        // Received Line Data
+        const receivedLineData = [
+            {
+                id: '1',
+                points: [297.40625, 82.40625, 793.40625, 280.40625],
+                stroke: 'black',
+                strokeWidth: 5,
+            },
+            {
+                id: '1',
+                points: [299.40625, 573.40625, 795.40625, 771.40625],
+                stroke: 'black',
+                strokeWidth: 5,
+            }
+        ];
+
+        // Call the updateLines function with received data
+        updateLines(receivedLineData);
+    </script>
+</body>
+</html>
