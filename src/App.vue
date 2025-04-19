@@ -4,18 +4,17 @@
 </template>
 
 <script>
-import HeaderPage from './components/HeaderPage.vue' ;
-import SideBar    from './components/SideBar.vue'    ;
+import HeaderPage from "./components/HeaderPage.vue";
+import SideBar from "./components/SideBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
 
-  components: { 
+  components: {
     HeaderPage,
     SideBar,
-  }
-}
-
+  },
+};
 </script>
 
 <style>
